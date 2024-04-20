@@ -1,38 +1,31 @@
 # Script that plays rock paper scissors with me
 
-from random import *
+import random
 
-options = ['rock' , 'paper' , 'scissors']
+options = ('rock' , 'paper' , 'scissors')
+computerAction = random.choice(options)
+playerAction = input("Rock paper scissors shoot~! ")
 
-def openingSequence():
-    print("Welcome to Rock Paper Scissors!\n")
-    print("I will be your opponent today!\n")
-    print("When you're ready, just input Rock, Paper, or Scissors\n")
-    print("Oh, and don't worry about me cheating! I won't I promise, cross my fingers :)\n")
 
-def playerAI():
-    return void
-    
+if playerAction == computerAction:
+    print(f"Golly we both picked {playerAction} no way!!")
+elif playerAction == 'rock':
+    if computerAction == 'scissors':
+            print("Holy smokes you SMASHED me!")
+    else:
+            print("Guess I got ya covered~! I win :)")
+elif playerAction == 'paper':
+    if computerAction == 'rock':
+            print("Paper beat's rock, you're really good at this~!")
+    else:
+            print("Talk about cutting the competition down to size, I win this one~!")
+elif playerAction == 'scissors':
+    if computerAction == 'paper':
+            print("Goodness take no prisoners, it's a cutthroat business. You win~!")
+    else:
+            print("I totally rocked your world admit it. I win~!")
 
-def gameRules():
-    return void
 
-def get_prompt():
-    answerRequest = True
-    while answerRequest:  
-        response = input("Rock paper scissors shoot~! ")
-        if response not in options:
-            print("try again sillypuss")
-        else:
-            answerRequest = False
-            break
-    return(response)
-    
+
        
-def mainLoop():
-    openingSequence()
-    get_prompt()
-    
 
-
-mainLoop()

@@ -1,31 +1,41 @@
-# Script that plays rock paper scissors with me
-
 import random
 
-options = ('rock' , 'paper' , 'scissors')
-computerAction = random.choice(options)
-playerAction = input("Rock paper scissors shoot~! ")
+winCondition = {"rock":"paper",
+                "paper":"scissors",
+                "scissors":"rock"}
 
-
-if playerAction == computerAction:
-    print(f"Golly we both picked {playerAction} no way!!")
-elif playerAction == 'rock':
-    if computerAction == 'scissors':
-            print("Holy smokes you SMASHED me!")
-    else:
-            print("Guess I got ya covered~! I win :)")
-elif playerAction == 'paper':
-    if computerAction == 'rock':
-            print("Paper beat's rock, you're really good at this~!")
-    else:
-            print("Talk about cutting the competition down to size, I win this one~!")
-elif playerAction == 'scissors':
-    if computerAction == 'paper':
-            print("Goodness take no prisoners, it's a cutthroat business. You win~!")
-    else:
-            print("I totally rocked your world admit it. I win~!")
+winQuote = "%s wins!\nYou chose %s.\nCPU chose %s!"
 
 
 
-       
+while True:
+        
+        cpuChoice = random.choice(list(winCondition.keys()))
+        
+        playerChoice = input("Rock paper scissors shoot!\n") # to-do : clean input 
 
+        if playerChoice == cpuChoice:
+                print("Draw")
+
+        elif cpuChoice == winCondition[playerChoice]:
+                print(winQuote % ( "CPU", playerChoice, cpuChoice))
+        else: 
+                print(winQuote % ("You", playerChoice, cpuChoice))
+
+
+""" to-do list:
+create gameplay loop  x
+        Implement continue / exit functionality
+
+add score keeping 
+
+refactor game logic x
+        move all game logic off main file
+
+create front end for game
+
+add dynamic winquotes
+
+add error checking 
+
+"""

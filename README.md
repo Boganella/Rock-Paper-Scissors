@@ -1,3 +1,6 @@
-A simple game of rock, paper scissors.
+### A simple game of rock, paper scissors =)
 
-I figure this may be a fun project to maintain over the course of my programming career and I have hopes of overengineering the fuck out of this to the point where it becomes incomprehensibly complex and a shadow of the former
+My first official programming project, many have come before only to be forgotten or given up on. Will continue to refactor & add features to over time.
+
+## What's new?
+- Rewrote codebase with much cleaner logic
